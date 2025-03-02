@@ -1,0 +1,42 @@
+/* Navbar Styles */
+.navbar {
+    background-color: black !important;
+  }
+  
+  .navbar .nav-link {
+    color: white !important;
+    margin-left: 10px;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #ddd !important;
+  }
+  
+  .navbar .nav-link.active {
+    color: white !important;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  /* Thumbnail Carousel */
+  .thumbnail-carousel img {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .thumbnail-carousel img:hover {
+    border-color: #007bff;
+  }
+  

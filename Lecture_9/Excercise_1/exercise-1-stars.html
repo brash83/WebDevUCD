@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars Printer</title>
+</head>
+<body>
+
+    <h2>Stars</h2>
+    <div id="starOutput"></div>
+<br>
+<h2>Pretty</h2>
+    <script>
+       
+        let userInput = prompt("Enter a number of stars:");
+
+        
+        let numStars = Number(userInput);
+
+        
+        if (isNaN(numStars) || numStars < 0) {
+            
+            alert("Please enter a valid, non-negative number.");
+        } else {
+            
+            let stars = '*'.repeat(numStars);
+
+            console.log(stars);
+
+            document.getElementById("starOutput").textContent = stars;
+        }
+    </script>
+
+</body>
+</html>

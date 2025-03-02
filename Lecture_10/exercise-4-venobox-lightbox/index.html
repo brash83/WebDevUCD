@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venobox BeatlesGallery</title>
+    <link rel="stylesheet" href="venobox/venobox.min.css" type="text/css" media="screen" />
+    <style>
+       
+        .logo {
+            text-align: center;
+            margin-top: 50px;  
+        }
+
+
+        .logo img {
+            width: 300px;   
+            height: auto;     
+            background-color: #fff;  
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  
+        }
+
+        
+        .image-box img {
+            width: 100%;
+            height: auto;
+            max-width: 200px; 
+            transition: all 0.3s ease;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.1); 
+        }
+
+        .image-box {
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="logo">
+        <img src="images/logo.png" alt="Beatles Logo">
+    </div>
+   
+
+
+    <div class="image-box">
+        <a class="image-box-link" data-gall="gallery01" href="images/2.jpg">
+            <img src="images/2.jpg" alt="Image 2">
+        </a>
+    </div>
+
+    <div class="image-box">
+        <a class="image-box-link" data-gall="gallery01" href="images/3.jpg">
+            <img src="images/3.jpg" alt="Image 3">
+        </a>
+    </div>
+
+    <div class="image-box">
+        <a class="image-box-link" data-gall="gallery01" href="images/4.jpg">
+            <img src="images/4.jpg" alt="Image 4">
+        </a>
+    </div>
+
+    <div class="image-box">
+        <a class="image-box-link" data-gall="gallery01" href="images/5.jpg">
+            <img src="images/5.jpg" alt="Image 5">
+        </a>
+    </div>
+
+    <div class="image-box">
+        <a class="image-box-link" data-gall="gallery01" href="images/6.jpg">
+            <img src="images/6.jpg" alt="Image 6">
+        </a>
+    </div>
+
+    <div class="image-box">
+        <a class="image-box-link" data-gall="gallery01" href="images/7.jpg">
+            <img src="images/7.jpg" alt="Image 7">
+        </a>
+    </div>
+
+    
+    <script type="text/javascript" src="venobox/venobox.min.js"></script>
+
+   
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.image-box-link').venobox(); 
+        });
+    </script>
+
+</body>
+</html>

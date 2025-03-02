@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Count of Monte Cristo quotes</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+        .quote-card {
+            border: 2px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Count of Monte Cristo quotes</h1>
+    <img src="https://images.booksense.com/images/516/778/9798643778516.jpg" alt="Book Image" width="300" height="450">
+
+    <div id="container">
+        <div class="quote-card" id="quote1">
+            <p id="para1">"There is neither happiness nor misery in the world; there is only the comparison of one state with another, nothing more. <br>
+            He who has felt the deepest grief is best able to experience supreme happiness."</p>
+            <button class="delete-btn" onclick="deleteQuote('quote1')">Delete</button>
+        </div>
+        <div class="quote-card" id="quote2">
+            <p id="para2" style="font-size: 1.1rem;">"Until the day when God will deign to reveal the future to man, <br>
+            all human wisdom is contained in these two words: 'Wait and hope."</p>
+            <button class="delete-btn" onclick="deleteQuote('quote2')">Delete</button>
+        </div>
+        <div class="quote-card" id="quote3">
+            <p id="para3">"Life is a storm. One minute you will bathe under the sun and the next you will be shattered upon the rocks. <br>
+            That's when you shout, 'Do your worst, for I will do mine!' and you will be remembered forever."</p>
+            <button class="delete-btn" onclick="deleteQuote('quote3')">Delete</button>
+        </div>
+        <br>
+        <button id="btn1">Make quote 1 turn blue!</button>
+        <button id="btn2">Make quote 2 turn red!</button>
+        <button id="addParaBtn">Add another quote</button>
+    </div>
+
+    <script src="JS/excercise6.js"></script>
+
+	<script>
+        // Add event listener to para2 to add the "highlight" class on hover (mouseover)
+        document.getElementById('para2').addEventListener('mouseover', function () {
+            this.classList.add('highlight'); // Add the "highlight" class
+        });
+
+        // Add event listener to para2 to remove the "highlight" class when hover ends (mouseout)
+        document.getElementById('para2').addEventListener('mouseout', function () {
+            this.classList.remove('highlight'); // Remove the "highlight" class
+        });
+    </script>
+</body>
+</html>
+
+

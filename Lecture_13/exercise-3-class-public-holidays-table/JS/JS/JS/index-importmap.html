@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "button": "./components/button.js",
+                "moment": "https://cdn.skypack.dev/moment"
+            }
+        }
+    </script>
+    <script type="module">
+        import BtnHandler from "./components/button.js";
+        import moment from "moment";
+
+        // Corrected event listener syntax
+        window.addEventListener("DOMContentLoaded", () => {
+            const buttonHandler = new BtnHandler("my-button");
+            console.log(moment("20111031", "YYYYMMDD").fromNow());
+        });
+    </script>
+</head>
+<body>
+    <!-- Button for BtnHandler to manage -->
+    <button id="my-button">Click Me</button>
+</body>
+</html>

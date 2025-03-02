@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <!-- VenoBox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.0/venobox.min.css" integrity="sha512-/xzqEpDTICfgAucyHbrGbYN9WXyMDd7/19I8Dt1V8cBdW5X1RqxFGvHD+s5L6+G5FMRfOJhK2UkkhP2zLsDW3g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div id="content"></div>
+
+    <!-- JSON Data -->
+    <script>
+        const dataOption1 = {
+            "total": 271165,
+            "totalHits": 500,
+            "hits": [
+                {
+                    "id": 715540,
+                    "largeImageURL": "images/yellow-gc30a6ab3c_1280.jpg",
+                    "webformatURL": "images/yellow-gc8ce69969_640.jpg",
+                    "tags": "yellow, flower, blossom",
+                    "favorites": 120,
+                    "likes": 399,
+                    "comments": 54
+                }
+            ]
+        };
+    </script>
+
+    <!-- VenoBox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.0/venobox.min.js" integrity="sha512-hMOEm7OsJLYUzhU2gZoMjvqMGXvoQ1xrLpNs3WaWxEmBQZgxBsbHgGaJmbQ9aznl6oSvp2yA64RLcCR4F9ej1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Main JavaScript -->
+    <script>
+        (() => {
+            const contentContainer = document.getElementById("content");
+
+            function renderImages(images) {
+                let imagesHtml = `<div class="image-container">`;
+
+                images.hits.forEach(image => {
+                    const tagsLinks = image.tags.split(',').map(tag => {
+                        const linkQuery = encodeURI(tag.trim());
+                        const linkText = tag.trim();
+                        return `<a href="#" onclick="loadImages('${linkQuery}')">${linkText}</a>`;
+                    }).join('');
+
+                    imagesHtml += `
+                        <div class="image">
+                            <a class="venobox" data-gall="gallery" title="${image.tags}" href="${image.largeImageURL}">
+                                <img src="${image.webformatURL}" alt="${image.tags}">
+                            </a>
+                            <div class="image-info">
+                                <div class="tags">${tagsLinks}</div>
+                                <div class="right">
+                                    <span class="favorites">${image.favorites}</span>
+                                    <span class="likes">${image.likes}</span>
+                                    <span class="comments">${image.comments}</span>
+                                </div>
+                            </div>
+                        </div>`;
+                });
+
+                imagesHtml += `</div>`;
+                contentContainer.innerHTML = imagesHtml;
+
+                // Initialize VenoBox
+                new VenoBox({
+                    numeration: true,
+                    infinigall: true,
+                    share: true,
+                    spinner: 'double-bounce'
+                });
+                console.log("VenoBox initialized");
+            }
+
+            function init() {
+                try {
+                    console.log(dataOption1);
+                    renderImages(dataOption1);
+                } catch (err) {
+                    console.error(err);
+                    contentContainer.innerHTML = `<h2>Error</h2><p>No images to display.</p><p>${err}</p>`;
+                }
+            }
+
+            window.addEventListener("load", () => {
+                init();
+            });
+        })();
+
+        function loadImages(query) {
+            console.log(`Load images for query: ${query}`);
+        }
+    </script>
+</body>
+</html>
+
+

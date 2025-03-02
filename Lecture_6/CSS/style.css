@@ -1,0 +1,101 @@
+.card-deck {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    flex-wrap: wrap; /* Allow wrapping */
+    margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    width: 23%; /* Adjusted width to fit four cards */
+    margin: 1%; /* Reduce margin to minimize gap */
+}
+
+.card-content {
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card-details {
+    padding: 35px;
+    background-color: rgba(5, 51, 75, 0.356);
+    color: white;
+}
+
+.btn {
+    display: inline-block; 
+    padding: 10px 15px;
+    color: white;
+    background-color: #093d53;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px auto; /* Center the button */
+}
+
+.btn:hover {
+    background-color: #3399b8;
+}
+
+nav {
+    background-color: #112131; 
+    padding: 10px; 
+    color: white;
+    display: flex; /* Use flexbox */
+}
+    
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Use flexbox for the list */
+    flex-grow: 1; /* Allow it to grow and fill space */
+}
+    
+nav li {
+    flex: 1; /* Allow list items to take equal space */
+    text-align: center; /* Center text in each link */
+}
+    
+nav a {
+    color: white; 
+    text-decoration: none; 
+    display: block; /* Make links block-level for full clickable area */
+    padding: 10px; /* Add some padding */
+}
+    
+nav a:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background change on hover */
+}
+    
+footer {
+    padding: 20px; 
+    background-color: #114d85; 
+    border-radius: 8px; 
+    color: white;
+    margin-bottom: 20px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; 
+    text-align: center;
+}

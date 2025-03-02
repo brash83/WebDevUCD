@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A Responsive Image Gallery with Lightbox using HTML CSS & JavaScript" />
+    <meta name="keywords" content="Create Image Gallery with Lightbox,CSS Gallery,HTML and CSS,HTML CSS JavaScript,Image Gallery" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 9 Demo - Image Gallery with Lightbox HTML CSS JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <h1>Lightbox demo with The Beatles</h1>
+    <section class="lightbox-container">
+      <div class="lightBox" id="lightbox">
+        <div class="lightBox_content">
+          <i class="fas fa-times close" id="close-lightbox"></i>
+          <div class="showImg">
+            <div class="image">
+              <img id="lightbox-image" src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-gallery">
+        <header>The Beatles Gallery</header>
+        <div class="image-container">
+        
+          <div class="image-box">
+            <img class="gImg" src="images/1.jpg" alt="" data-large="images/1.jpg" />
+          </div>
+          <div class="image-box">
+            <img class="gImg" src="images/2.jpg" alt="" data-large="images/2.jpg" />
+          </div>
+          <div class="image-box">
+            <img class="gImg" src="images/3.jpg" alt="" data-large="images/3.jpg" />
+          </div>
+          <div class="image-box">
+            <img class="gImg" src="images/4.jpg" alt="" data-large="images/4.jpg" />
+          </div>
+          <div class="image-box">
+            <img class="gImg" src="images/5.jpg" alt="" data-large="images/5.jpg" />
+          </div>
+          <div class="image-box">
+            <img class="gImg" src="images/6.jpg" alt="" data-large="images/6.jpg" />
+          </div>
+          <div class="image-box">
+            <img class="gImg" src="images/32.jpg" alt="" data-large="images/32.jpg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script>
+     
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const closeLightbox = document.getElementById('close-lightbox');
+      const galleryImages = document.querySelectorAll('.gImg');
+
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          const largeImage = img.getAttribute('data-large');
+          lightboxImage.src = largeImage;
+          lightbox.style.display = 'flex'; 
+        });
+      });
+
+      closeLightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none'; 
+      });
+
+      
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

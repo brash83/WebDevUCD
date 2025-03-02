@@ -1,0 +1,39 @@
+<script>
+    function sumAndAverageCalculator() {
+        let numbers = [];
+        let count = 0;
+        let sum = 0;
+
+        while (true) {
+            let input = prompt("Enter a positive number (-1 to quit):");
+            let num = parseInt(input);
+
+            if (isNaN(num)) {
+                console.error("Invalid input. Please enter a positive number.");
+                continue;
+            }
+
+            if (num === -1) break;
+
+            if (num >= 0) {
+                numbers.push(num);
+                sum += num;
+                count++;
+            } else {
+                console.error("Only positive numbers are allowed (-1 to quit).");
+            }
+        }
+
+        if (count === 0) {
+            console.log("No numbers were entered.");
+            return;
+        }
+
+        let average = sum / count;
+
+        console.log("\nThe values you entered were:", numbers.join(" "));
+        console.log(`Number Count = ${count}`);
+        console.log(`Sum = ${sum.toFixed(3)}`);
+        console.log(`Average = ${average.toFixed(3)}`);
+    }
+</script>
